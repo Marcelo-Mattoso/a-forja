@@ -1,4 +1,4 @@
-import Image from 'next/image';
+/* eslint-disable @next/next/no-img-element */
 
 const featuredVideos = [
   {
@@ -91,12 +91,9 @@ export default function Home() {
           </div>
 
           <div className="relative min-h-[360px] overflow-hidden rounded-lg border border-[#d7c6b2] bg-[#2d2720] shadow-[0_24px_60px_rgb(43_35_27/18%)]">
-            <Image
+            <img
               alt="Mesa com café, livros e equipamento de gravação"
-              className="object-cover opacity-75"
-              fill
-              priority
-              sizes="(min-width: 1024px) 540px, 100vw"
+              className="absolute inset-0 h-full w-full object-cover opacity-75"
               src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=1200&q=80"
             />
             <div className="absolute inset-0 bg-[linear-gradient(135deg,rgb(35_31_26/82%),rgb(35_31_26/22%))]" />
