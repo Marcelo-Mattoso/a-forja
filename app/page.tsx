@@ -1,204 +1,266 @@
 /* eslint-disable @next/next/no-img-element */
 
-const featuredVideos = [
-  {
-    title: 'Conversas de café sobre política, cultura e cotidiano',
-    type: 'Vídeo',
-    meta: 'Série principal',
-    accent: 'bg-[#b4472e]',
-  },
-  {
-    title: 'Cortes para acompanhar os melhores momentos',
-    type: 'Cortes',
-    meta: 'Publicação contínua',
-    accent: 'bg-[#176d6d]',
-  },
-  {
-    title: 'Entrevistas e encontros especiais',
-    type: 'Especial',
-    meta: 'Acervo em construção',
-    accent: 'bg-[#d8a332]',
-  },
+const navigation = ['Início', 'Sobre', 'Livros', 'Vídeos', 'Palestras', 'Contato'];
+
+const socialLinks = [
+  { label: 'Amazon', mark: 'a' },
+  { label: 'Instagram', mark: 'IG' },
+  { label: 'Facebook', mark: 'f' },
+  { label: 'YouTube', mark: 'YT' },
 ];
 
 const books = [
-  'Livros publicados por Marcelo Mattoso',
-  'Indicações de leitura citadas nos episódios',
-  'Textos, artigos e materiais de apoio',
+  {
+    title: 'O Homem que Procurava Onde Ficar',
+    volume: 'Volume 9',
+    tag: 'Lançamento',
+    image:
+      'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=620&q=80',
+    action: 'Ver na Amazon',
+  },
+  {
+    title: 'A Parte Morta do Jardim',
+    volume: 'Volume 2',
+    tag: 'Romance',
+    image:
+      'https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=620&q=80',
+    action: 'Saiba mais',
+  },
+  {
+    title: 'Crônicas do Café, Pão e Milagre',
+    volume: 'Volume 1',
+    tag: 'Crônicas',
+    image:
+      'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=620&q=80',
+    action: 'Saiba mais',
+  },
+  {
+    title: 'Crônicas do Café, Pão e Milagre',
+    volume: 'Volume 3',
+    tag: 'Coletânea',
+    image:
+      'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=620&q=80',
+    action: 'Saiba mais',
+  },
 ];
 
-const collections = [
-  { label: 'Vídeos', count: '00' },
-  { label: 'Livros', count: '00' },
-  { label: 'Textos', count: '00' },
-  { label: 'Agenda', count: '00' },
+const videos = [
+  {
+    title: 'Primeiro meu jardim',
+    episode: 'Episódio 1',
+    time: '13:38',
+    image:
+      'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=760&q=80',
+  },
+  {
+    title: 'Eu amadureci, mas não quero endurecer',
+    episode: 'Episódio 2',
+    time: '14:12',
+    image:
+      'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=760&q=80',
+  },
+  {
+    title: 'Episódio 4 Café com Mattoso',
+    episode: 'Episódio 4',
+    time: '42:20',
+    image:
+      'https://images.unsplash.com/photo-1478737270239-2f02b77fc618?auto=format&fit=crop&w=760&q=80',
+  },
 ];
+
+function BrandMark({ compact = false }: { compact?: boolean }) {
+  return (
+    <a className="brand-mark" href="#inicio" aria-label="Café com Mattoso">
+      <span className="brand-cup" aria-hidden="true">
+        <span />
+      </span>
+      <span className={compact ? 'sr-only' : 'brand-copy'}>
+        <strong>Café com Mattoso</strong>
+        <small>Café, Pão e Milagre</small>
+      </span>
+    </a>
+  );
+}
+
+function SectionTitle({ label }: { label: string }) {
+  return (
+    <div className="section-label">
+      <span>{label}</span>
+      <i aria-hidden="true" />
+    </div>
+  );
+}
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#f7f2ea] text-[#231f1a]">
-      <header className="border-b border-[#ded0bf] bg-[#fffaf2]/90">
-        <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-4 sm:px-8">
-          <a className="flex items-center gap-3" href="#" aria-label="Café com Mattoso">
-            <span className="grid h-10 w-10 place-items-center rounded-full bg-[#231f1a] text-sm font-bold text-[#fffaf2]">
-              CM
-            </span>
-            <span className="text-base font-semibold">
-              Café com Mattoso
-            </span>
-          </a>
-          <nav className="hidden items-center gap-6 text-sm font-medium text-[#5f5144] sm:flex">
-            <a href="#videos">Vídeos</a>
-            <a href="#livros">Livros</a>
-            <a href="#acervo">Acervo</a>
-          </nav>
-          <a
-            className="rounded-md bg-[#176d6d] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#125757]"
-            href="mailto:contato@cafecommattoso.com.br"
-          >
-            Contato
-          </a>
-        </div>
+    <main className="site-shell" id="inicio">
+      <header className="topbar">
+        <BrandMark />
+        <nav aria-label="Navegação principal">
+          {navigation.map((item) => (
+            <a
+              className={item === 'Início' ? 'active' : undefined}
+              href={`#${item.toLowerCase().replace('í', 'i').replace('é', 'e')}`}
+              key={item}
+            >
+              {item}
+            </a>
+          ))}
+        </nav>
       </header>
 
-      <section className="border-b border-[#ded0bf]">
-        <div className="mx-auto grid max-w-6xl gap-8 px-5 py-10 sm:px-8 lg:grid-cols-[1.05fr_0.95fr] lg:py-14">
-          <div className="flex flex-col justify-center">
-            <p className="mb-4 text-sm font-semibold uppercase text-[#8c5c2f]">
-              Acervo digital
-            </p>
-            <h1 className="max-w-3xl text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl">
-              Café com Mattoso em um só lugar.
-            </h1>
-            <p className="mt-5 max-w-2xl text-lg leading-8 text-[#5f5144]">
-              Um ponto de encontro para reunir episódios, cortes, livros,
-              textos, indicações e tudo o que fizer parte da conversa.
-            </p>
-            <div className="mt-7 flex flex-wrap gap-3">
-              <a
-                className="rounded-md bg-[#b4472e] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#963a28]"
-                href="#videos"
-              >
-                Ver vídeos
-              </a>
-              <a
-                className="rounded-md border border-[#8c5c2f] px-5 py-3 text-sm font-bold text-[#5f3621] transition hover:bg-[#eadbc8]"
-                href="#livros"
-              >
-                Explorar livros
-              </a>
-            </div>
-          </div>
+      <aside className="social-rail" aria-label="Redes e canais">
+        {socialLinks.map((link) => (
+          <a href="#" key={link.label} aria-label={link.label}>
+            <strong>{link.mark}</strong>
+            <span>{link.label}</span>
+          </a>
+        ))}
+      </aside>
 
-          <div className="relative min-h-[360px] overflow-hidden rounded-lg border border-[#d7c6b2] bg-[#2d2720] shadow-[0_24px_60px_rgb(43_35_27/18%)]">
+      <section className="hero">
+        <div className="hero-copy">
+          <h1>Marcelo Mattoso</h1>
+          <p className="subtitle">Café, Pão e Milagre</p>
+          <p className="intro">
+            Livros, vídeos e pequenas histórias sobre fé simples, reconstrução e
+            os milagres cotidianos.
+          </p>
+          <div className="hero-actions">
+            <a className="button primary" href="#livros">
+              <span aria-hidden="true" className="button-icon book-icon" />
+              Ver livros
+            </a>
+            <a className="button secondary" href="#videos">
+              <span aria-hidden="true" className="button-icon play-icon" />
+              Assistir vídeos
+            </a>
+          </div>
+          <p className="hero-note">
+            <span aria-hidden="true">+</span>
+            Pessoas são seus próprios milagres.
+          </p>
+        </div>
+
+        <div className="hero-media" aria-label="Marcelo Mattoso em estúdio">
+          <img
+            alt="Escritor em uma mesa com café, pão e livros ao fundo"
+            src="https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=1400&q=85"
+          />
+          <div className="hero-fade" />
+        </div>
+      </section>
+
+      <section className="content-panel" id="sobre">
+        <div className="about-grid">
+          <div>
+            <SectionTitle label="Sobre" />
+            <h2>Sobre Marcelo Mattoso</h2>
+            <p>
+              Escritor, desenvolvedor e criador do Café com Mattoso. Reúno
+              livros, conversas e reflexões sobre trabalho, fé, reconstrução e
+              os pequenos milagres humanos.
+            </p>
+          </div>
+          <figure className="studio-card">
             <img
-              alt="Mesa com café, livros e equipamento de gravação"
-              className="absolute inset-0 h-full w-full object-cover opacity-75"
-              src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=1200&q=80"
+              alt="Estúdio intimista com mesa de madeira, microfone e iluminação quente"
+              src="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?auto=format&fit=crop&w=1200&q=85"
             />
-            <div className="absolute inset-0 bg-[linear-gradient(135deg,rgb(35_31_26/82%),rgb(35_31_26/22%))]" />
-            <div className="relative flex h-full flex-col justify-end p-6 text-white sm:p-8">
-              <p className="mb-3 text-sm font-semibold uppercase text-[#f5cf86]">
-                Primeira versão
-              </p>
-              <h2 className="max-w-md text-3xl font-bold leading-tight">
-                A casa inicial para organizar conteúdo, memória e próximos lançamentos.
-              </h2>
-            </div>
-          </div>
+          </figure>
         </div>
-      </section>
 
-      <section id="acervo" className="mx-auto max-w-6xl px-5 py-8 sm:px-8">
-        <div className="grid gap-3 sm:grid-cols-4">
-          {collections.map((item) => (
-            <div
-              className="rounded-md border border-[#ded0bf] bg-[#fffaf2] p-5"
-              key={item.label}
-            >
-              <p className="text-3xl font-bold">{item.count}</p>
-              <p className="mt-1 text-sm font-semibold uppercase text-[#8c5c2f]">
-                {item.label}
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
+        <div className="section-divider" />
 
-      <section id="videos" className="bg-[#fffaf2]">
-        <div className="mx-auto max-w-6xl px-5 py-12 sm:px-8">
-          <div className="mb-7 flex flex-col justify-between gap-3 sm:flex-row sm:items-end">
-            <div>
-              <p className="text-sm font-semibold uppercase text-[#8c5c2f]">
-                Vídeos
-              </p>
-              <h2 className="mt-2 text-3xl font-bold">Destaques para publicar</h2>
-            </div>
-            <p className="max-w-xl text-sm leading-6 text-[#5f5144]">
-              Esta área já nasce preparada para receber embeds, thumbnails do
-              YouTube, playlists e cortes organizados por tema.
-            </p>
-          </div>
-
-          <div className="grid gap-4 lg:grid-cols-3">
-            {featuredVideos.map((video) => (
-              <article
-                className="overflow-hidden rounded-md border border-[#ded0bf] bg-white"
-                key={video.title}
-              >
-                <div className={`${video.accent} aspect-video`} />
-                <div className="p-5">
-                  <p className="text-xs font-bold uppercase text-[#8c5c2f]">
-                    {video.type}
-                  </p>
-                  <h3 className="mt-3 text-xl font-bold leading-snug">{video.title}</h3>
-                  <p className="mt-4 text-sm text-[#5f5144]">{video.meta}</p>
+        <section id="livros">
+          <SectionTitle label="Livros" />
+          <div className="book-grid">
+            {books.map((book) => (
+              <article className="book-card" key={`${book.title}-${book.volume}`}>
+                <div className="book-cover">
+                  <img alt={`Capa mockada de ${book.title}`} src={book.image} />
+                  <span>{book.tag}</span>
+                  <strong>{book.title}</strong>
+                </div>
+                <div className="book-body">
+                  <h3>{book.title}</h3>
+                  <p>{book.volume}</p>
+                  <a href="#contato">{book.action}</a>
                 </div>
               </article>
             ))}
           </div>
-        </div>
+        </section>
+
+        <div className="section-divider" />
+
+        <section id="videos">
+          <SectionTitle label="Vídeos" />
+          <div className="video-grid">
+            {videos.map((video) => (
+              <article className="video-card" key={video.title}>
+                <div className="video-thumb">
+                  <img alt={`Thumbnail mockado do vídeo ${video.title}`} src={video.image} />
+                  <span className="episode">{video.episode}</span>
+                  <span className="duration">{video.time}</span>
+                </div>
+                <div className="video-body">
+                  <h3>{video.title}</h3>
+                  <a href="#videos">
+                    <span aria-hidden="true" className="button-icon play-icon" />
+                    Assistir
+                  </a>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="talks-banner" id="palestras">
+          <div className="mic-mark" aria-hidden="true" />
+          <div>
+            <h2>Palestras</h2>
+            <p>Conversas sobre fé, reconstrução e os pequenos milagres humanos.</p>
+          </div>
+          <a className="button primary" href="#contato">
+            <span aria-hidden="true" className="button-icon mail-icon" />
+            Entrar em contato
+          </a>
+        </section>
       </section>
 
-      <section id="livros" className="mx-auto grid max-w-6xl gap-8 px-5 py-12 sm:px-8 lg:grid-cols-[0.8fr_1.2fr]">
-        <div>
-          <p className="text-sm font-semibold uppercase text-[#8c5c2f]">
-            Biblioteca
-          </p>
-          <h2 className="mt-2 text-3xl font-bold">Livros, leituras e referências</h2>
-          <p className="mt-4 leading-7 text-[#5f5144]">
-            A primeira estrutura deixa espaço para capas, sinopses, links de
-            compra, resenhas e materiais complementares.
-          </p>
+      <footer className="footer-panel" id="contato">
+        <div className="footer-quote">
+          <span className="brand-cup" aria-hidden="true">
+            <span />
+          </span>
+          <p>Ainda há café, pão e milagre, e muito por vir.</p>
         </div>
-
-        <div className="grid gap-3">
-          {books.map((book, index) => (
-            <article
-              className="grid grid-cols-[64px_1fr] items-center gap-4 rounded-md border border-[#ded0bf] bg-[#fffaf2] p-4"
-              key={book}
-            >
-              <span className="grid h-16 w-16 place-items-center rounded-md bg-[#231f1a] text-lg font-bold text-[#f5cf86]">
-                {String(index + 1).padStart(2, '0')}
-              </span>
-              <div>
-                <h3 className="font-bold">{book}</h3>
-                <p className="mt-1 text-sm text-[#5f5144]">
-                  Placeholder editorial para substituir pelos itens reais.
-                </p>
-              </div>
-            </article>
+        <div>
+          <h3>Navegação</h3>
+          <a href="#inicio">Início</a>
+          <a href="#sobre">Sobre</a>
+          <a href="#livros">Livros</a>
+          <a href="#videos">Vídeos</a>
+          <a href="#palestras">Palestras</a>
+        </div>
+        <div>
+          <h3>Siga</h3>
+          {socialLinks.map((link) => (
+            <a href="#" key={link.label}>
+              {link.label}
+            </a>
           ))}
         </div>
-      </section>
-
-      <footer className="border-t border-[#ded0bf] bg-[#231f1a] text-[#fffaf2]">
-        <div className="mx-auto flex max-w-6xl flex-col gap-4 px-5 py-8 sm:flex-row sm:items-center sm:justify-between sm:px-8">
-          <p className="text-sm">
-            Café com Mattoso - vídeos, livros e conversas reunidos.
-          </p>
-          <p className="text-sm text-[#d7c6b2]">Site em construção editorial.</p>
+        <div>
+          <h3>Contato</h3>
+          <a href="mailto:contato@marcelomattoso.com">contato@marcelomattoso.com</a>
+          <span>Brasil</span>
         </div>
+        <BrandMark compact />
+        <p className="copyright">
+          © 2026 Marcelo Mattoso. Todos os direitos reservados.
+        </p>
       </footer>
     </main>
   );
