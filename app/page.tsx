@@ -7,6 +7,7 @@ const navigation = ['Início', 'Sobre', 'Livros', 'Vídeos', 'Palestras', 'Conta
 const youtubeChannelUrl = 'https://www.youtube.com/@marcelomattoso';
 const amazonSeriesUrl =
   'https://www.amazon.com.br/dp/B0H4WP2GH2?binding=kindle_edition&ref=dbs_dp_sirpi';
+const assetBase = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
 
 const socialLinks = [
   { label: 'Amazon', mark: 'a', href: amazonSeriesUrl },
@@ -255,7 +256,7 @@ export default function Home() {
         <div className="hero-media" aria-label="Marcelo Mattoso em estúdio">
           <img
             alt="Marcelo Mattoso segurando uma xícara de café ao lado de uma cafeteira"
-            src="/images/marcelo-cafe-hero.jpg"
+            src={`${assetBase}/images/marcelo-cafe-hero.jpg`}
           />
           <div className="hero-fade" />
         </div>
@@ -275,7 +276,7 @@ export default function Home() {
           <figure className="studio-card">
             <img
               alt="Marcelo Mattoso em uma pista de corrida ao amanhecer"
-              src="/images/marcelo-corrida-sobre.jpg"
+              src={`${assetBase}/images/marcelo-corrida-sobre.jpg`}
             />
           </figure>
         </div>
