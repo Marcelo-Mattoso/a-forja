@@ -1,70 +1,174 @@
 /* eslint-disable @next/next/no-img-element */
 
+import ContactModal from './ContactModal';
+
 const navigation = ['Início', 'Sobre', 'Livros', 'Vídeos', 'Palestras', 'Contato'];
 
+const youtubeChannelUrl = 'https://www.youtube.com/@marcelomattoso';
+const amazonSeriesUrl =
+  'https://www.amazon.com.br/dp/B0H4WP2GH2?binding=kindle_edition&ref=dbs_dp_sirpi';
+
 const socialLinks = [
-  { label: 'Amazon', mark: 'a' },
-  { label: 'Instagram', mark: 'IG' },
-  { label: 'Facebook', mark: 'f' },
-  { label: 'YouTube', mark: 'YT' },
+  { label: 'Amazon', mark: 'a', href: amazonSeriesUrl },
+  { label: 'Instagram', mark: 'IG', href: 'https://www.instagram.com/mattoso900/' },
+  { label: 'Facebook', mark: 'f', href: 'https://www.facebook.com/cafecommattoso/' },
+  { label: 'YouTube', mark: 'YT', href: youtubeChannelUrl },
 ];
 
 const books = [
   {
-    title: 'O Homem que Procurava Onde Ficar',
-    volume: 'Volume 9',
-    tag: 'Lançamento',
+    title: 'Aquele que não tem palavra',
+    volume: 'Livro 1',
+    tag: 'Crônicas do café, pão e milagre',
     image:
-      'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=620&q=80',
+      'https://m.media-amazon.com/images/I/41qAw2ZWQSL._PJku-sticker-v7,TopRight,0,-50._SY300_.jpg',
+    href: 'https://www.amazon.com.br/gp/product/B0H75R15DS?ref_=dbs_m_mng_rwt_calw_tkin_0&storeType=ebooks',
     action: 'Ver na Amazon',
   },
   {
     title: 'A Parte Morta do Jardim',
-    volume: 'Volume 2',
-    tag: 'Romance',
+    volume: 'Livro 2',
+    tag: 'Crônicas do café, pão e milagre',
     image:
-      'https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=620&q=80',
-    action: 'Saiba mais',
+      'https://m.media-amazon.com/images/I/41PC2vHXetL._PJku-sticker-v7,TopRight,0,-50._SY300_.jpg',
+    href: 'https://www.amazon.com.br/gp/product/B0H763KQLG?ref_=dbs_m_mng_rwt_calw_tkin_1&storeType=ebooks',
+    action: 'Ver na Amazon',
   },
   {
-    title: 'Crônicas do Café, Pão e Milagre',
-    volume: 'Volume 1',
-    tag: 'Crônicas',
+    title: 'O Homem que Sabia Fugir',
+    volume: 'Livro 3',
+    tag: 'Crônicas do café, pão e milagre',
     image:
-      'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=620&q=80',
-    action: 'Saiba mais',
+      'https://m.media-amazon.com/images/I/31dVZRK+zIL._PJku-sticker-v7,TopRight,0,-50._SY300_.jpg',
+    href: 'https://www.amazon.com.br/gp/product/B0H75WV4NL?ref_=dbs_m_mng_rwt_calw_tkin_2&storeType=ebooks',
+    action: 'Ver na Amazon',
   },
   {
-    title: 'Crônicas do Café, Pão e Milagre',
-    volume: 'Volume 3',
-    tag: 'Coletânea',
+    title: 'O lar que não cabia nela',
+    volume: 'Livro 4',
+    tag: 'Crônicas do café, pão e milagre',
     image:
-      'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=620&q=80',
-    action: 'Saiba mais',
+      'https://m.media-amazon.com/images/I/41j+YGZJTNL._PJku-sticker-v7,TopRight,0,-50._SY300_.jpg',
+    href: 'https://www.amazon.com.br/gp/product/B0H764LNXS?ref_=dbs_m_mng_rwt_calw_tkin_3&storeType=ebooks',
+    action: 'Ver na Amazon',
+  },
+  {
+    title: 'A estrada que nunca chegou',
+    volume: 'Livro 5',
+    tag: 'Crônicas do café, pão e milagre',
+    image:
+      'https://m.media-amazon.com/images/I/312BdlxbJOL._PJku-sticker-v7,TopRight,0,-50._SY300_.jpg',
+    href: 'https://www.amazon.com.br/gp/product/B0H7Q57X74?ref_=dbs_m_mng_rwt_calw_tkin_4&storeType=ebooks',
+    action: 'Ver na Amazon',
+  },
+  {
+    title: 'O homem que rezava com a espada',
+    volume: 'Livro 6',
+    tag: 'Crônicas do café, pão e milagre',
+    image:
+      'https://m.media-amazon.com/images/I/41A+n+b8NOL._PJku-sticker-v7,TopRight,0,-50._SY300_.jpg',
+    href: 'https://www.amazon.com.br/gp/product/B0GX2WF6X2?ref_=dbs_m_mng_rwt_calw_tkin_5&storeType=ebooks',
+    action: 'Ver na Amazon',
+  },
+  {
+    title: 'O sonho que não era dele',
+    volume: 'Livro 7',
+    tag: 'Crônicas do café, pão e milagre',
+    image:
+      'https://m.media-amazon.com/images/I/416hB6jUnwL._PJku-sticker-v7,TopRight,0,-50._SY300_.jpg',
+    href: 'https://www.amazon.com.br/gp/product/B0H94RVJLT?ref_=dbs_m_mng_rwt_calw_tkin_6&storeType=ebooks',
+    action: 'Ver na Amazon',
+  },
+  {
+    title: 'O homem que carregava seu milagre',
+    volume: 'Livro 8',
+    tag: 'Crônicas do café, pão e milagre',
+    image:
+      'https://m.media-amazon.com/images/I/41eZ0NACyLL._PJku-sticker-v7,TopRight,0,-50._SY300_.jpg',
+    href: 'https://www.amazon.com.br/gp/product/B0H94X7QZ3?ref_=dbs_m_mng_rwt_calw_tkin_7&storeType=ebooks',
+    action: 'Ver na Amazon',
+  },
+  {
+    title: 'O homem que procurava onde ficar',
+    volume: 'Livro 9',
+    tag: 'Crônicas do café, pão e milagre',
+    image:
+      'https://m.media-amazon.com/images/I/41rk3YCcEYL._PJku-sticker-v7,TopRight,0,-50._SY300_.jpg',
+    href: 'https://www.amazon.com.br/gp/product/B0HCW6YQ5V?ref_=dbs_m_mng_rwt_calw_tkin_8&storeType=ebooks',
+    action: 'Ver na Amazon',
   },
 ];
 
 const videos = [
   {
+    title: 'Trabalhar também é tentar ficar de pé',
+    episode: 'Café, Pão e Milagre #10',
+    date: '25 ago. 2026',
+    image: 'https://i2.ytimg.com/vi/--EimCr6Zag/hqdefault.jpg',
+    href: 'https://www.youtube.com/watch?v=--EimCr6Zag',
+  },
+  {
+    title: 'A mesa continua',
+    episode: 'Café, Pão e Milagre #9',
+    date: '21 ago. 2026',
+    image: 'https://i2.ytimg.com/vi/mMG4Zr7RJMA/hqdefault.jpg',
+    href: 'https://www.youtube.com/watch?v=mMG4Zr7RJMA',
+  },
+  {
+    title: 'Quando alguém senta do seu lado',
+    episode: 'Café, Pão e Milagre #8',
+    date: '19 ago. 2026',
+    image: 'https://i2.ytimg.com/vi/u5z3a-HSd6A/hqdefault.jpg',
+    href: 'https://www.youtube.com/watch?v=u5z3a-HSd6A',
+  },
+  {
+    title: 'O corpo lembra o caminho',
+    episode: 'Café, Pão e Milagre #7',
+    date: '14 ago. 2026',
+    image: 'https://i3.ytimg.com/vi/bPWs-mpO3QY/hqdefault.jpg',
+    href: 'https://www.youtube.com/watch?v=bPWs-mpO3QY',
+  },
+  {
+    title: 'A casa vazia também fala',
+    episode: 'Café, Pão e Milagre #6',
+    date: '12 ago. 2026',
+    image: 'https://i3.ytimg.com/vi/6sThkenvjEc/hqdefault.jpg',
+    href: 'https://www.youtube.com/watch?v=6sThkenvjEc',
+  },
+  {
+    title: 'Deus chega trabalhando',
+    episode: 'Café, Pão e Milagre #5',
+    date: '7 ago. 2026',
+    image: 'https://i3.ytimg.com/vi/zuArzlOK2ZY/hqdefault.jpg',
+    href: 'https://www.youtube.com/watch?v=zuArzlOK2ZY',
+  },
+  {
     title: 'Primeiro meu jardim',
-    episode: 'Episódio 1',
-    time: '13:38',
-    image:
-      'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=760&q=80',
+    episode: 'Café, Pão e Milagre #4',
+    date: '5 ago. 2026',
+    image: 'https://i4.ytimg.com/vi/sG4jRZX8vbA/hqdefault.jpg',
+    href: 'https://www.youtube.com/watch?v=sG4jRZX8vbA',
+  },
+  {
+    title: 'Pessoas são seus próprios milagres',
+    episode: 'Café, Pão e Milagre #3',
+    date: '31 jul. 2026',
+    image: 'https://i3.ytimg.com/vi/v-871-pakiU/hqdefault.jpg',
+    href: 'https://www.youtube.com/watch?v=v-871-pakiU',
   },
   {
     title: 'Eu amadureci, mas não quero endurecer',
-    episode: 'Episódio 2',
-    time: '14:12',
-    image:
-      'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=760&q=80',
+    episode: 'Café, Pão e Milagre #2',
+    date: '29 jul. 2026',
+    image: 'https://i4.ytimg.com/vi/sUV14cb0I1w/hqdefault.jpg',
+    href: 'https://www.youtube.com/watch?v=sUV14cb0I1w',
   },
   {
-    title: 'Episódio 4 Café com Mattoso',
-    episode: 'Episódio 4',
-    time: '42:20',
-    image:
-      'https://images.unsplash.com/photo-1478737270239-2f02b77fc618?auto=format&fit=crop&w=760&q=80',
+    title: 'Não precisa chegar inteiro',
+    episode: 'Café, Pão e Milagre #1',
+    date: '24 jul. 2026',
+    image: 'https://i4.ytimg.com/vi/gdDC0B6IcDY/hqdefault.jpg',
+    href: 'https://www.youtube.com/watch?v=gdDC0B6IcDY',
   },
 ];
 
@@ -111,7 +215,13 @@ export default function Home() {
 
       <aside className="social-rail" aria-label="Redes e canais">
         {socialLinks.map((link) => (
-          <a href="#" key={link.label} aria-label={link.label}>
+          <a
+            href={link.href}
+            key={link.label}
+            aria-label={link.label}
+            target="_blank"
+            rel="noreferrer"
+          >
             <strong>{link.mark}</strong>
             <span>{link.label}</span>
           </a>
@@ -123,17 +233,17 @@ export default function Home() {
           <h1>Marcelo Mattoso</h1>
           <p className="subtitle">Café, Pão e Milagre</p>
           <p className="intro">
-            Livros, vídeos e pequenas histórias sobre fé simples, reconstrução e
-            os milagres cotidianos.
+            A série Kindle e os episódios do Café com Mattoso reunidos em uma
+            mesa sobre fé simples, reconstrução e pequenos milagres cotidianos.
           </p>
           <div className="hero-actions">
-            <a className="button primary" href="#livros">
+            <a className="button primary" href={amazonSeriesUrl} target="_blank" rel="noreferrer">
               <span aria-hidden="true" className="button-icon book-icon" />
-              Ver livros
+              Ver na Amazon
             </a>
-            <a className="button secondary" href="#videos">
+            <a className="button secondary" href={youtubeChannelUrl} target="_blank" rel="noreferrer">
               <span aria-hidden="true" className="button-icon play-icon" />
-              Assistir vídeos
+              Canal no YouTube
             </a>
           </div>
           <p className="hero-note">
@@ -144,8 +254,8 @@ export default function Home() {
 
         <div className="hero-media" aria-label="Marcelo Mattoso em estúdio">
           <img
-            alt="Escritor em uma mesa com café, pão e livros ao fundo"
-            src="https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=1400&q=85"
+            alt="Marcelo Mattoso segurando uma xícara de café ao lado de uma cafeteira"
+            src="/images/marcelo-cafe-hero.jpg"
           />
           <div className="hero-fade" />
         </div>
@@ -164,8 +274,8 @@ export default function Home() {
           </div>
           <figure className="studio-card">
             <img
-              alt="Estúdio intimista com mesa de madeira, microfone e iluminação quente"
-              src="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?auto=format&fit=crop&w=1200&q=85"
+              alt="Marcelo Mattoso em uma pista de corrida ao amanhecer"
+              src="/images/marcelo-corrida-sobre.jpg"
             />
           </figure>
         </div>
@@ -174,18 +284,27 @@ export default function Home() {
 
         <section id="livros">
           <SectionTitle label="Livros" />
-          <div className="book-grid">
+          <p className="section-intro">
+            Série Kindle com 9 livros, listada aqui na ordem original: o Livro 1
+            aparece primeiro.
+          </p>
+          <div
+            className="book-carousel"
+            aria-label="Carrossel de livros da série Crônicas do café, pão e milagre"
+          >
             {books.map((book) => (
               <article className="book-card" key={`${book.title}-${book.volume}`}>
                 <div className="book-cover">
-                  <img alt={`Capa mockada de ${book.title}`} src={book.image} />
+                  <img alt={`Capa de ${book.title}`} src={book.image} />
                   <span>{book.tag}</span>
                   <strong>{book.title}</strong>
                 </div>
                 <div className="book-body">
                   <h3>{book.title}</h3>
                   <p>{book.volume}</p>
-                  <a href="#contato">{book.action}</a>
+                  <a href={book.href} target="_blank" rel="noreferrer">
+                    {book.action}
+                  </a>
                 </div>
               </article>
             ))}
@@ -196,17 +315,23 @@ export default function Home() {
 
         <section id="videos">
           <SectionTitle label="Vídeos" />
-          <div className="video-grid">
-            {videos.map((video) => (
+          <p className="section-intro">
+            Vídeos do canal oficial em ordem de publicação, começando pelo mais recente.
+          </p>
+          <div
+            className="video-carousel"
+            aria-label="Carrossel com os 8 vídeos mais recentes do Café com Mattoso"
+          >
+            {videos.slice(0, 8).map((video) => (
               <article className="video-card" key={video.title}>
                 <div className="video-thumb">
-                  <img alt={`Thumbnail mockado do vídeo ${video.title}`} src={video.image} />
+                  <img alt={`Thumbnail do vídeo ${video.title}`} src={video.image} />
                   <span className="episode">{video.episode}</span>
-                  <span className="duration">{video.time}</span>
+                  <span className="duration">{video.date}</span>
                 </div>
                 <div className="video-body">
                   <h3>{video.title}</h3>
-                  <a href="#videos">
+                  <a href={video.href} target="_blank" rel="noreferrer">
                     <span aria-hidden="true" className="button-icon play-icon" />
                     Assistir
                   </a>
@@ -222,10 +347,7 @@ export default function Home() {
             <h2>Palestras</h2>
             <p>Conversas sobre fé, reconstrução e os pequenos milagres humanos.</p>
           </div>
-          <a className="button primary" href="#contato">
-            <span aria-hidden="true" className="button-icon mail-icon" />
-            Entrar em contato
-          </a>
+          <ContactModal />
         </section>
       </section>
 
@@ -247,14 +369,14 @@ export default function Home() {
         <div>
           <h3>Siga</h3>
           {socialLinks.map((link) => (
-            <a href="#" key={link.label}>
+            <a href={link.href} key={link.label} target="_blank" rel="noreferrer">
               {link.label}
             </a>
           ))}
         </div>
         <div>
           <h3>Contato</h3>
-          <a href="mailto:contato@marcelomattoso.com">contato@marcelomattoso.com</a>
+          <a href="mailto:mmattoso900@gmail.com">mmattoso900@gmail.com</a>
           <span>Brasil</span>
         </div>
         <BrandMark compact />
