@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Café com Mattoso',
+  title: { default: 'Café com Mattoso | Marcelo Mattoso', template: '%s' },
   description:
-    'Acervo digital do Café com Mattoso com vídeos, livros, textos e materiais de apoio.',
+    'Tecnologia, trabalho, histórias e vida. Uma mídia de Marcelo Mattoso.',
 };
 
 export default function RootLayout({
