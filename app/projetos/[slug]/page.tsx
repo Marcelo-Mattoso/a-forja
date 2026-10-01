@@ -1,18 +1,20 @@
+/* eslint-disable @next/next/no-img-element */
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Footer, Header } from '../../SiteChrome';
 import { getProject, projects } from '../../projects-data';
+import { pageMetadata } from '../../seo';
 
 export function generateStaticParams() { return projects.map(({ slug }) => ({ slug })); }
 export function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
-  return params.then(({ slug }) => { const project = getProject(slug); return project ? { title: project.name, description: project.shortDescription } : {}; });
+  return params.then(({ slug }) => { const project = getProject(slug); return project ? pageMetadata({ title: project.name, description: project.shortDescription, path: `/projetos/${project.slug}` }) : {}; });
 }
 
 export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
   const project = getProject((await params).slug);
   if (!project) notFound();
-  return <main className="theme--forja"><Header />
+  return <main id="main-content" className="theme--forja"><Header />
     <section className="page-hero wrap project-detail-hero">
       <div><p className="eyebrow">{project.category}</p><span className={`status status--${project.status.toLowerCase().replaceAll(' ', '-')}`}>{project.status}</span><h1>{project.name}</h1><p>{project.shortDescription}</p></div>
       {project.coverImage ? <img src={project.coverImage} alt="" /> : <div className="project-detail-art" aria-hidden="true">{project.name.slice(0, 1)}</div>}
