@@ -1,4 +1,11 @@
 import Link from 'next/link';
 import { contactEmail, socialLinks } from './site-data';
-export function Header() { return <header className="topbar"><Link className="brand" href="/"><span>Café com Mattoso</span><small>por Marcelo Mattoso</small></Link><nav aria-label="Navegação principal"><Link href="/">Café</Link><Link href="/historias">Histórias</Link><Link href="/tech">Tech</Link><Link href="/blue-drop#palestras">Palestras</Link><Link href="/blue-drop">Blue Drop</Link></nav></header>; }
-export function Footer() { return <footer className="footer"><div><p className="eyebrow">Café com Mattoso</p><p className="footer-line">Uma mídia de Marcelo Mattoso.<br />Pessoas em primeiro lugar.</p></div><div className="footer-links"><Link href="/historias">Histórias</Link><Link href="/tech">Tech</Link><Link href="/na-mesa">Espaço na Mesa</Link><Link href="/blue-drop#palestras">Palestras</Link><a href={`mailto:${contactEmail}`}>Contato</a>{socialLinks.map((link) => <a href={link.href} key={link.label} target="_blank" rel="noreferrer">{link.label}</a>)}</div><small>© 2026 Marcelo Mattoso</small></footer>; }
+export type SiteTheme = 'cafe' | 'forja';
+type ChromeProps = { theme?: SiteTheme };
+export function Header({ theme = 'forja' }: ChromeProps) {
+  const navItems = [['Início', '/'], ['Projetos', '/projetos'], ['Café com Mattoso', '/cafe-com-mattoso'], ['Sobre', '/#sobre'], ['Contato', '/#contato']];
+  return <header className={`topbar theme--${theme}`}><Link className="brand" href="/"><span>A Forja</span><small>por Marcelo Mattoso</small></Link><nav aria-label="Navegação principal">{navItems.map(([label, href]) => <Link href={href} key={href}>{label}</Link>)}</nav></header>;
+}
+export function Footer({ theme = 'forja' }: ChromeProps) {
+  return <footer className={`footer theme--${theme}`}><div><p className="eyebrow">A Forja</p><p className="footer-line">Projetos para construir,<br />contar e compartilhar.</p></div><div className="footer-links"><Link href="/projetos">Projetos</Link><Link href="/cafe-com-mattoso">Café com Mattoso</Link><Link href="/historias">Histórias</Link><Link href="/palestras">Palestras</Link><a href={`mailto:${contactEmail}`}>Contato</a>{socialLinks.map((link) => <a href={link.href} key={link.label} target="_blank" rel="noreferrer">{link.label}</a>)}</div><small>© 2026 Marcelo Mattoso</small></footer>;
+}
