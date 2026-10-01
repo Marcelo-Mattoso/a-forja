@@ -29,7 +29,7 @@ export default function ContactModal() {
     const senderEmail = String(formData.get('email') ?? '').trim();
     const subject =
       String(formData.get('subject') ?? '').trim() ||
-      'Contato pelo site Café com Mattoso';
+      'Contato pelo site A Forja';
     const message = String(formData.get('message') ?? '').trim();
     const body = [
       `Email para retorno: ${senderEmail}`,
@@ -68,7 +68,7 @@ export default function ContactModal() {
               ×
             </button>
             <h2 id="contact-modal-title">Entrar em contato</h2>
-            <p>Envie sua mensagem para o Café com Mattoso.</p>
+            <p>Envie sua mensagem para A Forja.</p>
             <form onSubmit={handleSubmit}>
               <label>
                 Email
@@ -84,7 +84,7 @@ export default function ContactModal() {
                 Assunto
                 <input
                   name="subject"
-                  placeholder="Sobre palestras, livros ou conversas"
+                  placeholder="Sobre um projeto, palestra ou conversa"
                   required
                   type="text"
                 />
@@ -113,3 +113,4 @@ export default function ContactModal() {
     </>
   );
 }
+
