@@ -1,3 +1,5 @@
+import { publicAsset } from './public-asset';
+
 export const projectCategories = ['Tecnologia', 'Conteúdo', 'Entretenimento'] as const;
 export const projectStatuses = ['Ativo', 'Em desenvolvimento', 'Em planejamento'] as const;
 
@@ -42,7 +44,7 @@ export const projects: Project[] = [
     status: 'Ativo',
     shortDescription: 'Conversas, vídeos, textos e reflexões sobre pessoas, trabalho, tecnologia e escolhas.',
     description: 'Café com Mattoso é um projeto de conteúdo da A Forja. Ele reúne conversas, episódios de Café, Pão e Milagre, histórias e ideias que mantêm as pessoas no centro.',
-    coverImage: '/images/marcelo-cafe-hero.jpg',
+    coverImage: publicAsset('images/marcelo-cafe-hero.jpg'),
     tags: ['Vídeos', 'Textos', 'Palestras'],
     links: [{ label: 'Visitar o Café com Mattoso', href: '/cafe-com-mattoso' }],
     internalRoute: '/projetos/cafe-com-mattoso',
