@@ -11,7 +11,7 @@ export default function ProjectFilters() {
   const visibleProjects = filter === 'Todos' ? projects : projects.filter((project) => project.category === filter);
   return <>
     <div className="project-filters" aria-label="Filtrar projetos">
-      {(['Todos', ...projectCategories] as Filter[]).map((item) => <button className={filter === item ? 'is-active' : ''} key={item} type="button" onClick={() => setFilter(item)}>{item}</button>)}
+      {(['Todos', ...projectCategories] as Filter[]).map((item) => <button aria-pressed={filter === item} className={filter === item ? 'is-active' : ''} key={item} type="button" onClick={() => setFilter(item)}>{item}</button>)}
     </div>
     <div className="projects-grid">{visibleProjects.map((project) => <ProjectCard key={project.id} project={project} />)}</div>
   </>;

@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Link from 'next/link';
 import type { Project } from './projects-data';
 
@@ -5,7 +6,7 @@ export default function ProjectCard({ project }: { project: Project }) {
   return (
     <article className="project-card">
       <div className="project-cover">
-        {project.coverImage ? <img src={project.coverImage} alt="" /> : <span aria-hidden="true">{project.category}</span>}
+        {project.coverImage ? <img src={project.coverImage} alt="" decoding="async" loading="lazy" /> : <span aria-hidden="true">{project.name}</span>}
       </div>
       <div className="project-card-copy">
         <div className="project-meta"><span>{project.category}</span><span className={`status status--${project.status.toLowerCase().replaceAll(' ', '-')}`}>{project.status}</span></div>
