@@ -1,0 +1,50 @@
+{
+  "crm": {
+    "eyebrow": "Tecnologia",
+    "title": "Forja CRM",
+    "description": "O Forja CRM é o projeto prioritário em desenvolvimento. Uma ferramenta pensada para transformar contatos, rotinas e contexto comercial em trabalho mais claro.",
+    "status": "Em desenvolvimento",
+    "accentColor": "#c8f34a",
+    "tags": ["Software", "Produto", "Relações"]
+  },
+  "cafe-com-mattoso": {
+    "eyebrow": "Conteúdo",
+    "title": "Café com Mattoso",
+    "description": "Um projeto de conteúdo da A Forja que reúne conversas, episódios, histórias e ideias que mantêm as pessoas no centro.",
+    "status": "Ativo",
+    "accentColor": "#d9a342",
+    "tags": ["Vídeos", "Textos", "Palestras"]
+  },
+  "ascensao-heroica": {
+    "eyebrow": "Tecnologia · Entretenimento",
+    "title": "Ascensão Heróica",
+    "description": "Um espaço para explorar personagens, sistemas e as consequências de cada escolha.",
+    "status": "Em desenvolvimento",
+    "accentColor": "#a98bff",
+    "tags": ["Jogo", "Narrativa", "HQs"]
+  },
+  "cronicas-cafe-pao-milagre": {
+    "eyebrow": "Conteúdo · Entretenimento",
+    "title": "Crônicas do Café, Pão e Milagre",
+    "description": "Uma série de livros publicada que amplia as conversas do Café por meio de ficção, personagens e histórias.",
+    "status": "Ativo",
+    "accentColor": "#e6b578",
+    "tags": ["Livros", "Série literária"]
+  },
+  "athos": {
+    "eyebrow": "Tecnologia · Entretenimento",
+    "title": "Athos",
+    "description": "Uma frente autoral em planejamento, pensada como um universo aberto à exploração, criação e participação.",
+    "status": "Em planejamento",
+    "accentColor": "#66b6c5",
+    "tags": ["Jogo", "Universo"]
+  },
+  "thronus": {
+    "eyebrow": "Entretenimento",
+    "title": "Thronus",
+    "description": "Um universo em planejamento que poderá receber histórias, jogos e outras experiências.",
+    "status": "Em planejamento",
+    "accentColor": "#cb7c56",
+    "tags": ["Universo", "Histórias"]
+  }
+}
