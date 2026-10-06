@@ -9,9 +9,9 @@ export const metadata: Metadata = {
   title: { default: 'A Forja', template: '%s | A Forja' },
   description: 'Projetos de tecnologia, conteúdo e entretenimento criados por Marcelo Mattoso.',
   applicationName: 'A Forja',
-  icons: { icon: '/favicon.svg' },
-  openGraph: { title: 'A Forja', description: 'Tecnologia, conteúdo, entretenimento e projetos em construção.', locale: 'pt_BR', type: 'website', siteName: 'A Forja' },
-  twitter: { card: 'summary' },
+  icons: { icon: '/images/brand/forja-logo-white.png', apple: '/images/brand/forja-logo-white.png' },
+  openGraph: { title: 'A Forja', description: 'Tecnologia, conteúdo, entretenimento e projetos em construção.', locale: 'pt_BR', type: 'website', siteName: 'A Forja', images: [{ url: '/images/brand/forja-logo-white.png', width: 730, height: 680, alt: 'A Forja' }] },
+  twitter: { card: 'summary_large_image', images: ['/images/brand/forja-logo-white.png'] },
 };
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   const organization = {
