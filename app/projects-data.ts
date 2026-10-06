@@ -2,100 +2,15 @@ import { publicAsset } from './public-asset';
 
 export const projectCategories = ['Tecnologia', 'Conteúdo', 'Entretenimento'] as const;
 export const projectStatuses = ['Ativo', 'Em desenvolvimento', 'Em planejamento'] as const;
-
 export type ProjectCategory = (typeof projectCategories)[number];
 export type ProjectStatus = (typeof projectStatuses)[number];
-
-export type Project = {
-  id: string;
-  slug: string;
-  name: string;
-  category: ProjectCategory;
-  status: ProjectStatus;
-  featured?: boolean;
-  shortDescription: string;
-  description: string;
-  coverImage?: string;
-  logo?: string;
-  tags: string[];
-  links?: { label: string; href: string }[];
-  externalUrl?: string;
-  internalRoute: string;
-};
-
+export type Project = { id: string; slug: string; name: string; categories: ProjectCategory[]; status: ProjectStatus; featured?: boolean; shortDescription: string; description: string; coverImage?: string; accentColor: string; url?: string; cta?: string; tags: string[]; };
 export const projects: Project[] = [
-  {
-    id: 'crm',
-    slug: 'crm',
-    name: 'CRM',
-    category: 'Tecnologia',
-    status: 'Em desenvolvimento',
-    featured: true,
-    shortDescription: 'Uma ferramenta comercial construída para organizar relações e trabalho com clareza.',
-    description: 'O CRM é o projeto prioritário da A Forja neste momento. Ele está em desenvolvimento e terá espaço para apresentar funcionalidades, imagens do produto e formas de conhecer a solução à medida que ganhar forma.',
-    tags: ['Software', 'Produto', 'Relações'],
-    internalRoute: '/projetos/crm',
-  },
-  {
-    id: 'cafe-com-mattoso',
-    slug: 'cafe-com-mattoso',
-    name: 'Café com Mattoso',
-    category: 'Conteúdo',
-    status: 'Ativo',
-    shortDescription: 'Conversas, vídeos, textos e reflexões sobre pessoas, trabalho, tecnologia e escolhas.',
-    description: 'Café com Mattoso é um projeto de conteúdo da A Forja. Ele reúne conversas, episódios de Café, Pão e Milagre, histórias e ideias que mantêm as pessoas no centro.',
-    coverImage: publicAsset('images/marcelo-cafe-hero.jpg'),
-    tags: ['Vídeos', 'Textos', 'Palestras'],
-    links: [{ label: 'Visitar o Café com Mattoso', href: '/cafe-com-mattoso' }],
-    internalRoute: '/projetos/cafe-com-mattoso',
-  },
-  {
-    id: 'ascensao-heroica',
-    slug: 'ascensao-heroica',
-    name: 'Ascensão Heróica',
-    category: 'Entretenimento',
-    status: 'Em desenvolvimento',
-    shortDescription: 'Jogo e universo narrativo de heróis, escolhas, masmorras e histórias em expansão.',
-    description: 'Ascensão Heróica reúne jogo, universo narrativo, HQs e conteúdos relacionados. O projeto segue em desenvolvimento como um espaço para explorar personagens, sistemas e consequências de cada escolha.',
-    tags: ['Jogo', 'Narrativa', 'HQs'],
-    internalRoute: '/projetos/ascensao-heroica',
-  },
-  {
-    id: 'cronicas-cafe-pao-milagre',
-    slug: 'cronicas-cafe-pao-milagre',
-    name: 'Crônicas do Café, Pão e Milagre',
-    category: 'Entretenimento',
-    status: 'Ativo',
-    shortDescription: 'Série literária sobre pessoas comuns, encontros, quedas e os milagres que cabem numa mesa.',
-    description: 'Uma série literária publicada que amplia as conversas do Café por meio de ficção, personagens e histórias.',
-    tags: ['Livros', 'Série literária'],
-    links: [{ label: 'Ver os livros', href: '/historias' }],
-    internalRoute: '/projetos/cronicas-cafe-pao-milagre',
-  },
-  {
-    id: 'athos',
-    slug: 'athos',
-    name: 'Athos',
-    category: 'Entretenimento',
-    status: 'Em planejamento',
-    shortDescription: 'Um projeto de jogo e universo para explorar, imaginar e construir.',
-    description: 'Athos é uma frente autoral em planejamento, pensada como um mundo aberto à exploração, criação e participação.',
-    tags: ['Jogo', 'Universo'],
-    internalRoute: '/projetos/athos',
-  },
-  {
-    id: 'thronus',
-    slug: 'thronus',
-    name: 'Thronus',
-    category: 'Entretenimento',
-    status: 'Em planejamento',
-    shortDescription: 'Um universo futuro de fantasia, escolhas e consequências.',
-    description: 'Thronus é um universo em planejamento. Por enquanto, ele existe como uma possibilidade criativa que poderá receber histórias, jogos e outras experiências.',
-    tags: ['Universo', 'Histórias'],
-    internalRoute: '/projetos/thronus',
-  },
+  { id: 'crm', slug: 'crm', name: 'Forja CRM', categories: ['Tecnologia'], status: 'Em desenvolvimento', featured: true, shortDescription: 'Uma ferramenta comercial para organizar relações e trabalho com clareza.', description: 'O Forja CRM é o projeto prioritário em desenvolvimento. Uma ferramenta pensada para transformar contatos, rotinas e contexto comercial em trabalho mais claro.', accentColor: '#c8f34a', tags: ['Software', 'Produto', 'Relações'] },
+  { id: 'cafe-com-mattoso', slug: 'cafe-com-mattoso', name: 'Café com Mattoso', categories: ['Conteúdo'], status: 'Ativo', shortDescription: 'Conversas, vídeos, textos e reflexões sobre pessoas, trabalho e escolhas.', description: 'Um projeto de conteúdo da A Forja que reúne conversas, episódios, histórias e ideias que mantêm as pessoas no centro.', coverImage: publicAsset('images/marcelo-cafe-hero.jpg'), accentColor: '#d9a342', url: '/cafe-com-mattoso', cta: 'Visitar o Café', tags: ['Vídeos', 'Textos', 'Palestras'] },
+  { id: 'ascensao-heroica', slug: 'ascensao-heroica', name: 'Ascensão Heróica', categories: ['Tecnologia', 'Entretenimento'], status: 'Em desenvolvimento', shortDescription: 'Jogo e universo narrativo de heróis, escolhas e histórias em expansão.', description: 'Um espaço para explorar personagens, sistemas e as consequências de cada escolha.', accentColor: '#a98bff', tags: ['Jogo', 'Narrativa', 'HQs'] },
+  { id: 'cronicas-cafe-pao-milagre', slug: 'cronicas-cafe-pao-milagre', name: 'Crônicas do Café, Pão e Milagre', categories: ['Conteúdo', 'Entretenimento'], status: 'Ativo', shortDescription: 'Série literária sobre encontros, quedas e os milagres que cabem numa mesa.', description: 'Uma série de livros publicada que amplia as conversas do Café por meio de ficção, personagens e histórias.', accentColor: '#e6b578', url: '/historias', cta: 'Conhecer os livros', tags: ['Livros', 'Série literária'] },
+  { id: 'athos', slug: 'athos', name: 'Athos', categories: ['Tecnologia', 'Entretenimento'], status: 'Em planejamento', shortDescription: 'Um mundo para explorar, imaginar e construir.', description: 'Uma frente autoral em planejamento, pensada como um universo aberto à exploração, criação e participação.', accentColor: '#66b6c5', tags: ['Jogo', 'Universo'] },
+  { id: 'thronus', slug: 'thronus', name: 'Thronus', categories: ['Entretenimento'], status: 'Em planejamento', shortDescription: 'Um universo de fantasia, escolhas e consequências.', description: 'Um universo em planejamento que poderá receber histórias, jogos e outras experiências.', accentColor: '#cb7c56', tags: ['Universo', 'Histórias'] },
 ];
-
-export function getProject(slug: string) {
-  return projects.find((project) => project.slug === slug);
-}
+export function getProject(slug: string) { return projects.find((project) => project.slug === slug); }

@@ -17,4 +17,3 @@ export function pageMetadata({ title, description, path = '/' }: PageMetadataInp
     twitter: { card: 'summary', title: `${title} | A Forja`, description },
   };
 }
-
