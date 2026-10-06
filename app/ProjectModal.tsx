@@ -49,7 +49,7 @@ export default function ProjectModal({ contentId, isOpen, onClose }: ProjectModa
       >
         <button ref={closeButton} className="project-modal-close" type="button" aria-label="Fechar" onClick={onClose}>×</button>
         <p className="eyebrow">{content.eyebrow}</p>
-        <h2 id={`${contentId}-title`}>{content.title}</h2>
+        <h2 id={`${contentId}-title`}>{content.name}</h2>
         <p>{content.description}</p>
         <div className="project-tags">{content.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
         <span className="status">{content.status}</span>

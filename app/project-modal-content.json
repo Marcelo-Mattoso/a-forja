@@ -1,17 +1,18 @@
 {
   "crm": {
     "eyebrow": "Tecnologia",
-    "title": "Forja CRM",
+    "name": "Forja CRM",
     "description": "O Forja CRM é o projeto prioritário em desenvolvimento. Uma ferramenta pensada para transformar contatos, rotinas e contexto comercial em trabalho mais claro.",
     "status": "Em desenvolvimento",
     "accentColor": "#c8f34a",
-    "href": "http://www.sdasdsad.com.br",
-    "title": "Visitar site do Forja CRM",
+    "href": "https://marcelo-mattoso.github.io/crm-landing/",
+    "title": "Acessar landing page do Forja CRM",
+    "logo": "images/projects/forja-crm-logo-main.png",
     "tags": ["Software", "Produto", "Relações"]
   },
   "cafe-com-mattoso": {
     "eyebrow": "Conteúdo",
-    "title": "Café com Mattoso",
+    "name": "Café com Mattoso",
     "description": "Um projeto de conteúdo da A Forja que reúne conversas, episódios, histórias e ideias que mantêm as pessoas no centro.",
     "status": "Ativo",
     "accentColor": "#d9a342",
@@ -21,7 +22,7 @@
   },
   "ascensao-heroica": {
     "eyebrow": "Tecnologia · Entretenimento",
-    "title": "Ascensão Heróica",
+    "name": "Ascensão Heróica",
     "description": "Um espaço para explorar personagens, sistemas e as consequências de cada escolha.",
     "status": "Em desenvolvimento",
     "accentColor": "#278fe3",
@@ -31,7 +32,7 @@
   },
   "cronicas-cafe-pao-milagre": {
     "eyebrow": "Conteúdo · Entretenimento",
-    "title": "Crônicas do Café, Pão e Milagre",
+    "name": "Crônicas do Café, Pão e Milagre",
     "description": "Uma série de livros publicada que amplia as conversas do Café por meio de ficção, personagens e histórias.",
     "status": "Ativo",
     "accentColor": "#e6b578",
@@ -41,7 +42,7 @@
   },
   "athos": {
     "eyebrow": "Tecnologia · Entretenimento",
-    "title": "Athos",
+    "name": "Athos",
     "description": "Uma frente autoral em planejamento, pensada como um universo aberto à exploração, criação e participação.",
     "status": "Em planejamento",
     "accentColor": "#66b6c5",
@@ -51,7 +52,7 @@
   },
   "thronus": {
     "eyebrow": "Entretenimento",
-    "title": "Thronus",
+    "name": "Thronus",
     "description": "Um universo em planejamento que poderá receber histórias, jogos e outras experiências.",
     "status": "Em planejamento",
     "accentColor": "#cb7c56",
