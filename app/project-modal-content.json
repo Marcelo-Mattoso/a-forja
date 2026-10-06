@@ -5,6 +5,8 @@
     "description": "O Forja CRM é o projeto prioritário em desenvolvimento. Uma ferramenta pensada para transformar contatos, rotinas e contexto comercial em trabalho mais claro.",
     "status": "Em desenvolvimento",
     "accentColor": "#c8f34a",
+    "href": "http://www.sdasdsad.com.br",
+    "title": "Visitar site do Forja CRM",
     "tags": ["Software", "Produto", "Relações"]
   },
   "cafe-com-mattoso": {
@@ -13,6 +15,8 @@
     "description": "Um projeto de conteúdo da A Forja que reúne conversas, episódios, histórias e ideias que mantêm as pessoas no centro.",
     "status": "Ativo",
     "accentColor": "#d9a342",
+    "href": "cafecommattoso",
+    "title": "Visitar site do Café com Mattoso",
     "tags": ["Vídeos", "Textos", "Palestras"]
   },
   "ascensao-heroica": {
@@ -20,7 +24,9 @@
     "title": "Ascensão Heróica",
     "description": "Um espaço para explorar personagens, sistemas e as consequências de cada escolha.",
     "status": "Em desenvolvimento",
-    "accentColor": "#a98bff",
+    "accentColor": "#278fe3",
+    "href": "",
+    "title": "Visitar site de Ascensão Heróica",
     "tags": ["Jogo", "Narrativa", "HQs"]
   },
   "cronicas-cafe-pao-milagre": {
@@ -29,6 +35,8 @@
     "description": "Uma série de livros publicada que amplia as conversas do Café por meio de ficção, personagens e histórias.",
     "status": "Ativo",
     "accentColor": "#e6b578",
+    "href": "",
+    "title": "Visitar site de Crônicas do Café, Pão e Milagre",
     "tags": ["Livros", "Série literária"]
   },
   "athos": {
@@ -37,6 +45,8 @@
     "description": "Uma frente autoral em planejamento, pensada como um universo aberto à exploração, criação e participação.",
     "status": "Em planejamento",
     "accentColor": "#66b6c5",
+    "href": "",
+    "title": "Visitar site de Athos",
     "tags": ["Jogo", "Universo"]
   },
   "thronus": {
@@ -45,6 +55,8 @@
     "description": "Um universo em planejamento que poderá receber histórias, jogos e outras experiências.",
     "status": "Em planejamento",
     "accentColor": "#cb7c56",
+    "href": "",
+    "title": "Visitar site de Thronus",
     "tags": ["Universo", "Histórias"]
   }
 }

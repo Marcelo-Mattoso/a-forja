@@ -35,6 +35,7 @@ export default function ProjectModal({ contentId, isOpen, onClose }: ProjectModa
   return createPortal(
     <div
       className="project-modal-backdrop"
+      onClick={(event) => event.stopPropagation()}
       onMouseDown={(event) => {
         if (event.target === event.currentTarget) onClose();
       }}
@@ -52,6 +53,17 @@ export default function ProjectModal({ contentId, isOpen, onClose }: ProjectModa
         <p>{content.description}</p>
         <div className="project-tags">{content.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
         <span className="status">{content.status}</span>
+        {content.href ? (
+          <a className="project-external-link" href={content.href} rel="noreferrer" target="_blank" title={content.title}>
+            <span>Site do projeto</span>
+            <strong>{content.title} <b aria-hidden="true">↗</b></strong>
+          </a>
+        ) : (
+          <div className="project-external-link project-external-link--pending">
+            <span>Site do projeto</span>
+            <strong>Em breve</strong>
+          </div>
+        )}
       </section>
     </div>,
     document.body,
