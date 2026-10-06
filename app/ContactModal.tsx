@@ -1,11 +1,14 @@
 'use client';
 
 import { FormEvent, useEffect, useState } from 'react';
+import { useModalScrollLock } from './useModalScrollLock';
 
 const contactEmail = 'mmattoso900@gmail.com';
 
 export default function ContactModal() {
   const [isOpen, setIsOpen] = useState(false);
+
+  useModalScrollLock(isOpen);
 
   useEffect(() => {
     if (!isOpen) {
@@ -52,7 +55,13 @@ export default function ContactModal() {
       </button>
 
       {isOpen ? (
-        <div className="contact-modal-backdrop" role="presentation">
+        <div
+          className="contact-modal-backdrop"
+          onMouseDown={(event) => {
+            if (event.target === event.currentTarget) setIsOpen(false);
+          }}
+          role="presentation"
+        >
           <div
             aria-labelledby="contact-modal-title"
             aria-modal="true"

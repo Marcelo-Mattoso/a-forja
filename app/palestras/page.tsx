@@ -1,9 +1,0 @@
-import type { Metadata } from 'next';
-import ContactModal from '../ContactModal';
-import { Footer, Header } from '../SiteChrome';
-import { pageMetadata } from '../seo';
-
-export const metadata: Metadata = pageMetadata({ title: 'Palestras', description: 'Palestras sobre autoria, liderança, tecnologia e escolhas.', path: '/palestras' });
-const talks = [['Escolher sem se perder', 'Como recuperar autoria quando medo, pressão, expectativa ou circunstâncias começam a decidir por nós.'], ['Liderar sem possuir', 'Como construir autonomia, confiança e responsabilidade sem transformar liderança em controle.'], ['Tecnologia sem perder o humano', 'Como usar tecnologia e IA sem terceirizar julgamento, responsabilidade e decisão.']];
-
-export default function Palestras() { return <main id="main-content" className="theme--cafe"><Header /><section className="page-hero wrap talks-hero"><p className="eyebrow">Marcelo Mattoso</p><h1>Conversas que devolvem espaço para escolher.</h1><p>Palestras para eventos e equipes sobre pessoas, escolhas, liderança e tecnologia sem perder o humano.</p></section><section className="wrap section"><p className="eyebrow">Temas</p><h2>Ideias que saem da mesa e encontram outras pessoas.</h2><div className="talk-list">{talks.map(([title, text]) => <article key={title}><h3>{title}</h3><p>{text}</p></article>)}</div><ContactModal /></section><section className="wrap section split"><div><p className="eyebrow">Para o seu evento</p><h2>Levar Marcelo é abrir uma conversa, não entregar respostas prontas.</h2></div><p>As palestras nascem das perguntas do Café e das experiências de construção da Forja. O centro continua sendo gente real diante de decisões reais.</p></section><Footer /></main>; }
