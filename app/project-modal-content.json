@@ -18,6 +18,8 @@
     "accentColor": "#d9a342",
     "href": "cafecommattoso",
     "title": "Visitar site do Café com Mattoso",
+    "logo": "images/projects/cafe-com-mattoso-logo.png",
+    "logoFit": "contain",
     "tags": ["Vídeos", "Textos", "Palestras"]
   },
   "ascensao-heroica": {
@@ -28,6 +30,8 @@
     "accentColor": "#278fe3",
     "href": "",
     "title": "Visitar site de Ascensão Heróica",
+    "logo": "images/projects/forja-ascensao-heroica.png",
+    "logoFit": "contain",
     "tags": ["Jogo", "Narrativa", "HQs"]
   },
   "cronicas-cafe-pao-milagre": {
